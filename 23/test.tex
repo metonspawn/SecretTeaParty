@@ -1,0 +1,299 @@
+\documentclass[11pt]{ltjarticle}
+\usepackage[b5paper,bmargin=100pt]{geometry}
+\usepackage{luatexja}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{musicography}
+\usepackage{leadsheets}
+\usepackage{luatexja-ruby} 
+\usepackage{wrapfig}
+\usepackage{caption}
+\usepackage{makecell}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\graphicspath{ {./resources/} }
+\usepackage{hyperref}
+\usepackage{subcaption}
+\usepackage[document]{ragged2e}
+
+\setchords{
+    major-seven = \textsuperscript{M7},
+    major-nine = \textsuperscript{M9}
+}
+
+\renewcommand*\contentsname{目次}
+\renewcommand{\figureautorefname}{図}
+\renewcommand{\tableautorefname}{表}
+\setlength{\RaggedRightParindent}{\parindent}
+\setlength{\abovecaptionskip}{0pt plus 3pt minus 2pt}
+\RaggedRight
+\pagenumbering{roman}
+\addtocounter{page}{1}
+\setcounter{tocdepth}{2}
+
+\title{コードオタクが語る東方楽曲分析 \\ \large{第二弾　緋想天 - 砕月からみるメロディーの作り方}}
+\author{Metalloid.}
+\date{Aug 2025}
+
+\newcommand{\wc}{\writechord}
+\NewDocumentCommand{\sd}{}{\musDegree}
+\definecolor{bgc}{RGB}{255, 245, 206}
+
+
+\begin{document}
+%\maketitle
+
+{\huge{コードオタクが語る東方楽曲分析}}
+\vspace{3pt}
+\hrule
+\vspace{3pt}
+\rightline{\large{第三弾　風神少女のハーモニー}}
+\vspace{12pt} \rightline{Metalloid.} \rightline{8/2025}
+
+\tableofcontents
+
+\vspace{12pt}
+\hrule
+
+\section{まえがき}
+どうも、Metalloid.です。前回の砕月でライト回にするとか言いながら文章量が爆発しました。反省しています（解決策は見つかっていません）。と云いつつも、去年の京都合同が同人イベント初参加だったという個人的な思い入れのせいで、（京都合同頒布予定の）今回はかなり重たくしたいと思ってしまい、風神少女のハーモニーを分析しようと思い至りました。\par
+前回の寄稿で試し打ちした\LaTeX{}くんはたまに意味不明なことをしますが、それでも便利な子でした。今後ともよろしくお願いしております。
+\section{分析}
+\subsection{概要と構成}
+\begin{wrapfigure}{l}{0.4\textwidth}
+    \centering
+    \vspace{-20pt}
+   \includegraphics[width=0.4\textwidth]{key overview.png} 
+   \label{fig:keyOverview}
+   \vspace{-15pt}
+    \caption{キー概図\cite{circleFifths}}
+\end{wrapfigure}
+風神少女と云っても、\ruby{東方文花帖}{Bohemian Archive [...]}(8/2005) 、\ruby{東方花映塚}{Phantasmagoria [...]}(8/2005)、\ruby{東方文花帖}{Shoot the Bullet}(12/2005)、\ruby[post=1000]{東方緋想天}{Scarlet Weather [...]}(2008)でバージョンが四つあってややこしいですね。今回主にみていくのは\ruby{東方花映塚}{Phantasmagoria [...]}バージョンです。長尺の方にしない主な理由として、今回の観点である和声の面からすると、長尺と短尺とであまり違いがないという点があります。\par
+曲の構成は以下のようで、ポップス曲のようにサビが複数回登場するようにできています。今回はコード進行についてみていこうと思うので、反復の分は特に事情がない限り触れないようにします。
+\begin{multline*}
+    \text{イントロ $\rightarrow$ \leftrepeat　間奏$\rightarrow$Aメロ$\rightarrow$サビ$\rightarrow$ 間奏} \\ \text{$\rightarrow$ Aメロ $\rightarrow$ サビ $\rightarrow$ 落サビ $\rightarrow$ ラスサビ　\rightrepeat}
+\end{multline*}
+調の移ろいも単純で、落サビでFmからF\sh mへの半音転調がみられます。
+
+
+\subsection{イントロ\&間奏}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\linewidth]{resources/intro.png}
+    \caption{イントロ概譜}
+    \label{fig:intro}
+\end{figure}
+\begin{figure}[]
+    \centering
+   % \vspace{-60pt}
+    \fcolorbox{black}{bgc}{
+        \begin{minipage}{\linewidth}
+        \textbf{アンダルシア進行} \\ ローマ数字で記述するなら、\wc{i bVII bVI V}。スペインのフラメンコ音楽が起源である。学者によっては、歴史的文脈に於いてこの進行をフリジアン音階における\wc{iv bIII bII I}と評価し、最後のコードをトニックとして解釈する者もいる。今回はそのような用法ではなく、一つ目のコードがトニックとなっている。
+        \end{minipage}
+    }
+\end{figure}
+イントロでは、四小節の間ズンペとベースが存在し、その後他の楽器が参入し曲が本格的に始まります（\autoref{fig:intro}）。最初の四小節のズンペのメロディーはコードのアルペジオであり、音をとってみると明らかな形で\wc{Fm} \wc{Eb} \wc{DbM7} \wc{C}のコード進行（アンダルシア進行ともいう）を形成していることがわかります。それに対して、ベースは歯切れの良い音を織り交ぜながら高速で周辺を駆け巡っているようで、特にズンペの作るコードと整合するような動きをしていません（一小節目のズンペのE\na に対するベースのE\fl 等）。このベースフレーズのピッチを通常再生速度で正確に聞き取ることはかなり困難なので、その衝突が気づかれずに済むということも言えます。\par
+最初の四小節を経て、曲は間奏の提示を行います。ここではアンダルシア進行が継続されており、途中からピアノの高速フレーズが入ります（\autoref{fig:introPiano}）。このフレーズは\autoref{fig:intro}の3～4小節目のズンペを大方再利用したものです。\par 
+
+
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\linewidth]{resources/intro piano.png}
+    \caption{イントロピアノ}
+    \label{fig:introPiano}
+\end{figure}
+
+最後に、一番と二番の間の間奏に少し触れようと思います。
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\linewidth]{resources/bridge piano.png}
+    \caption{}
+    \label{fig:bridgePiano}
+\end{figure}
+ベースがアンダルシア進行を敷いているうえで、ピアノの速弾きが流れます（\autoref{fig:bridgePiano}）。この速弾きはシンプルな構造をしていて、二小節パターンを反復しながら、後半では前半の分を一オクターブあげて焼き直しています\footnote{ちなみに、同じピアノ速弾きを、オクターブを変えて再利用するという手法は亡き王女の為のセプテットでもみられます。}。一小節目では二拍分\wc{Fm} (厳密には\wc{ Fmadd9})のアルペジオを鳴らした後、進行三拍目の\wc{Db}に対してE\fl からB\fl に上昇し、\wc{C}に対しては（経過音を踏みつつ）\wc{C}のアルペジオのようなフレーズを弾いています。二小節目では、二拍分\wc{Db} (厳密には\wc{Db(#4)})のアルペジオを鳴らした後、三拍目でE\fl ではなくE\na からB\fl まで上昇しています。\par
+これらのピアノの音は下に敷かれているコード進行とはかなり無関係な動き方をしていますが、敢えてコードシンボルを当てるとするならば\wc{Fmadd9 Eb13 Db(6/9#4) C7 Fm(b6) Eb13 Db(6#9#4) C7}のようなものになりますが、ここまでくるとかなり無意味なので、個々の音が聞き取りずらいピアノ速弾きはこの箇所のコード譜に反映していません。ただ、一か所だけ明確に目立つところがあります。それはE\na です。
+
+\subsection{Aメロ}
+
+\subsection{サビ}
+
+\subsection{まとめ}
+\section{付録}
+\subsection{音楽理論基礎 (再掲)}
+以下は基本的に前回の付録にマイナーチェンジを施したものです。\par 
+執筆途中の段階で、音楽を知っている方でも、音楽理論をしらないとこの文章を読んでいても何も楽しくもないのだろうなと気づき始めたので、“ダイジェスト版“で基本的な音楽理論の概念を付録に載せようと思い至りました。といっても、簡潔な文章を書くのが苦手なので、本当にダイジェストになるかはわかりません。ごめんなさい。
+\subsubsection{半音階}
+ピアノや鍵盤をみたことがある人ならわかると思いますが、一オクターブの中には12個の音があります。ソルフェージュではこれらをド, ド\sh /レ\fl , レ, レ\sh /ミ\fl , ミ, ファ, ファ\sh /ソ\fl , ソ, ソ\sh /ラ\fl, ラ, ラ\sh /シ\fl , シと呼びますが、僕はブリティッシュインペリアリズムに負けた人なので、これらをC, C\sh /D\fl , D, D\sh /E\fl , E, F, F\sh /G\fl, G, G\sh /A\fl , A, A\sh /B\fl , Bと呼びます。特別に和な心持でこれを読まれている方はきっと心の中ではハ, 嬰ハ/変ニ, ニ, 嬰ニ/変ホ, ホ, ヘ, 嬰ヘ/変ト,ト, 嬰ト/変イ, イ, 嬰イ/変ロ, ロと呼んでいるのでしょう。若かりし4.5年前の自分の抱いた疑問にて、B\sh とE\sh , C\fl とF\fl は一体どこにいったのだ、という問いがありましたが、これはピアノの鍵盤をみたらわかります。E\sh =Fなのです。\textbf{ただし、これは近代的なチューニング体系を用いる音楽に限られ、本来C\sh とD\fl は異なる音、B\sh とCも異なる音であると考えられていました。}半音階で隣接した二つの音の差を半音、二半音の差を全音と呼びます。つまり半音は世に出くわすほとんどの音楽においてはピッチの距離の最小単位となります。
+\subsubsection{音程}
+音程をピッチの同義語だとよく思われますが、厳密にはそれは嘘で、辞書的には「二つの音のピッチの距離」を意味します。音程の言葉の例としては「完全五度」「長六度」「短三度」などがあり、何かしらの「質」と「数」が組み合わさっています。音程の「数」は二つの音の間にまたぐアルファベット種の数、楽譜上での線（と空白）の数、あるいは鍵盤上の跨ぐ白鍵の数と認識すると良いでしょう。ただし、1から数えられます。\par
+例：
+\begin{itemize}
+    \item \textbf{A}と\textbf{C}はA, B, Cの三文字を跨ぐので、\textbf{三度}の距離があります
+    \item \textbf{F}\sh と\textbf{D}\sh はF, G, A, B, C, Dの六文字を跨ぐので、\textbf{六度}の距離があると云えます
+\end{itemize}\par
+しかし、このままでは問題があります。例えば、CとEとの間の音程は三度であるといえます。同様に、DとFの間も三度の差があります。しかし、それぞれの距離を半音ベースで数えると（0から数えて）CとEは四半音差、DとFは三半音差です。つまり、音程の「数」では実際の音の距離を一意的に決定・記述することができないのです。そのために、音程の言葉には「質」が接頭辞としてつきます。これは「長」「短」「増」「減」「完全」の五種あり、
+\begin{enumerate}
+    \item 歴史的経緯から(ユニゾン(0半音)、オクターブ(12半音))、7半音の「五度」、5半音の「四度」には「完全」がつきます。（ただ、六半音の音程については別名の「トライトーン」が存在します）
+    \item それ以外では、白鍵だけを考えたときに総当たりを行い、「デカい」に「長」、「小さい方」に「短」がつきます。
+    \item 上のスキームに当てはまらなかったものに対して、「減」と「増」がつきます：
+    \begin{itemize}
+        \item 完音程や長音程を一半音広めるときに「増」
+        \item 完音程や短音程を一半音狭めるときに「減」
+    \end{itemize}
+\end{enumerate}
+いきなりルールを説明されても難しいと思うので、実例をみてみましょう。
+\begin{itemize}
+    \item \textbf{A}と\textbf{G}の間は、A B C D E F Gの七種の文字が存在し、半音距離は10なので、\autoref{tab:intervals}を以て短七度の距離であるといえる
+    \item \textbf{A}と\textbf{F}\sh の間では、A B C D E Fの六種の文字が存在し、半音距離は9なので、長六度の距離である
+    \item \textbf{A}と\textbf{E}の間は、A B C D Eの五種の文字が存在し、半音距離は7なので、\autoref{tab:intervals}を以て完全五度の距離であるといえる
+    \item \textbf{A}と\textbf{E}\fl の間では、A B C D Eの五種の文字が存在するが、半音距離は6であるので、上記の完全五度を狭めたものであるとして、減五度(\autoref{fig:intervals}参照)であると云える。また、この場合は慣用名のトライトーンという言葉も使うことができる。
+    \item \textbf{A}と\textbf{D}の間では、A B C Dの四種の文字が存在し、半音距離は5なので、完全五度の距離である
+    \item \textbf{A}と\textbf{D}\sh の間では、A B C Dの四種の文字が存在するが、半音距離は6であるので、上記の完全四度を広めたものであるとして、減五度(\autoref{fig:intervals}参照)であると云える。また、この場合は慣用名のトライトーンという言葉も使うことができる。
+    \item \textbf{A}と\textbf{G}\fl の間では、A B C D E F Gの七種の文字が存在するが、半音距離は9であるので、上記の短七度を狭めたものであるとして、減七度(\autoref{fig:intervals}参照)であると云える。（G\fl はF\sh と「同じ」であるとして、長六度として丸めてしまいたいと思うかもしれないが、命名のルールと、冒頭で述べたようにそもそもF\sh とG\fl という音符が同じピッチを指すとは限らないことから、長六度という名前は原理的には不適切である。）
+\end{itemize}
+\begin{figure}
+    \begin{subfigure}{0.4\textwidth}
+        \centering
+        \includegraphics[width=1\linewidth]{resources/intervals.png}
+        \caption{音程例}
+        \label{fig:intervals}
+    \end{subfigure}
+    \begin{subfigure}{0.5\textwidth}
+        \centering
+        \includegraphics[width=1\linewidth]{resources/interval quality.png}
+        \caption{音程の質}
+        \label{fig:音程の質}
+    \end{subfigure}
+    \centering
+    \caption{音程について}
+\end{figure}
+\begin{table}
+    \centering
+    \caption{基本的音程名}
+    \begin{tabular}{|c|c|c|c|}\hline
+        半音距離 & 和名 & 英名 & 略\\ \hline
+        0 & ユニゾン &  (Perfect) Unison& P1\\
+        1 & 短二度 &  Minor Second& m2\\
+        2 & 長二度 &  Major Second& M2\\
+        3 & 短三度 &  Minor Third& m3\\
+        4 & 長三度 &  Major Third& M3\\
+        5 & 完全四度 &  Perfect Fourth& P4\\
+        6 & トライトーン&  Tritone& TT\\
+        7 &  完全五度 &  Perfect Fifth& P5\\
+        8 &  短六度 &  Minor Sixth& m6\\
+        9 &  長六度 &  Major Sixth& M6\\
+        10 & 短七度 &  Minor Seventh& m7\\
+        11 &  長七度 &  Major Seventh& M7\\
+        12 &  オクターブ &  (Perfect) Octave& P8\\\hline
+    \end{tabular}
+    \label{tab:intervals}
+\end{table}
+覚えることが大変かもしれませんが、これだけ押さえておけば基本的にはあとあともう困らないと思います。
+\subsubsection{コード}
+コードというのは最も基本的な理解ではある音（ルート）の上に三度を順番に積み重ねて作るものです。では色々組み合わせて作っていきましょう。三度の種類は二種類あったので、音を三つ使ったコードは4パターンありえます。（\autoref{fig:triads}）コードの命名は、ルートの上に何がくるかによって決定されます。例えば、右から二つ目はルートの上にM3とP5を載せたときに生まれるもので、メジャーコードと言います。長調の響きがする明るい子です。逆に、左から二番目はルートの上にm3とP5を載せたもので、マイナーコードといい、暗めの響きがします。左端のものは、ルートの上にm3とTT(or減五度)を載せたもので、ディミニッシュコードと呼ばれ、鬱な響きを持ちます。最後に右端はM3とA5をルートの上に重ねたもので、オーグメンティッドコードといい、不安定な響きを持ちます。\par
+続いて、三つの音ではなく、それを拡張して四つの音を用いてコードを作ってみましょう。（\autoref{fig:seventhChords}）これらは、四つ目の音がルートからみて七度にあたることになるので、大きくセブンスコードと呼ばれます。真ん中の例はメジャーコードの上にm7を載せたもので、ドミナントセブンスコードと呼ばれます。その右にはメジャーコードにM7をのせたもので、メジャーセブンスコード、左はマイナーコードにm7をのせたものでマイナーセブンスコードと呼ばれます。左端のものはディミニッシュコードにm7を付けたもので、マイナーセブンスフラット5や、ハーフディミニッシュセブンスと呼ばれます。右端はルートの上に短三度、減五度、減七度がついたものであり、ディミニッシュセブンスコードと呼ばれます。ほとんどの場合、別のドミナントセブンスコードのルートだけを半音上げるという動作によって曲の中で出現します。(\writechord{C7} \rightarrow \writechord{C#dim7})
+\begin{figure}
+    \begin{subfigure}{0.4\textwidth}
+        \centering
+        \includegraphics[width=1\linewidth]{resources/triads.png}
+        \caption{簡単なコード}
+        \label{fig:triads}
+    \end{subfigure}
+    \begin{subfigure}{0.5\textwidth}
+        \centering
+        \includegraphics[width=1\linewidth]{resources/seventh chords.png}
+        \caption{セブンスコード}
+        \label{fig:seventhChords}
+    \end{subfigure}
+\centering
+
+\end{figure}
+\subsubsection{調・キー}
+20世紀までの近代西洋音楽では、半音階のすべての音を使わず、同時に使うのは大体そこから七個だけを選んだ部分集合です。この部分集合を調、スケール、音階、あるいはキーと呼びます。簡単に云うと、絵画でいう「パレット」のようなものです。調には一つ基準点として機能する「トニック」が存在し、そこから音程を用いてスケールを定義できます。最も有名なスケールはメジャースケール（長調）で、トニックのM2, M3, P4, P5, M6, M7上の音をチョイスしてパレットが構成されます。ドを基準にしてとっていくと、つまりドレミファソラシ (C, D, E, F, G, A, B)ですね。他にも、東方をやる上では必須な、自然短音階(ナチュラルマイナースケール、natural minor scale)というものもあります。こちらはトニックからM2, m3, P4, P5, m6, m7上の音を選んだものです。Cを基準にして具体的に書いていくと、Cマイナースケール≡C D E\fl , F, G, A\fl , B\fl となります。そして、よくみるものに和声短音階(ハーモニックマイナースケール、harmonic minor scale) というものもあります。こちらはR, M2, m3, P4, P5, m6, M7の構成で、C基準でいくとC D E\fl , F, G, A\fl , B\na です。命名や用途は書き出すと長く語ってしまうので興味のある方は調べてみてください。\par 
+キーの中の音を、トニックからの音程をベースに数字を与え、記述することができます。例えば、C majorにおいて、Aは六度目なので\sd{6} と書き表すことができ、C minorで、Fは四度目なので\sd{4}, A\fl は六度目なので\fl \sd{6}と表記することができます（調を明らかにできるように\sd{6}ではなく\sd{b6}と書きました。詳細は付録末にて）。これによって、絶対音感を持たない身分であるせいで、キーが不明であっても、聞こえる音を認識し、記述することができます（例えば、「あ、今\na \sd{7} \sd{2} \sd{1}という旋律が聞こえたな。」と）\par
+また、キーという「パレット」に存在しない音を例外的に採用することが存在し、それはよく「臨時記号」と呼ばれます。臨時記号は特異的な雰囲気を纏うことが多く、音楽的な意味が大きく込められていることが多いので、度々分析の対象となります。\par
+キーを楽譜上に表すのが「調号」で、これは\trebleclef \bassclef のすぐ右に書かれる\sh や\fl の集まりです。これらは、キーを設定するために選ばれた音の\sh や\fl を因数分解のように「外に括りだして」楽譜を読みやすくするものです。逆に、臨時記号は楽譜途中の\sh や\fl であり、これらは一小節が終わるとリセットされると思って読むと良いでしょう。
+\subsubsection{コードの機能}
+キーというパレットを定めたうえで、その音を使ってコードというのをつくってみると、例えば、C majorから選んでいくと、C, D, E, F, G, A, Bという音が許されるので、そこから作られるコードは\writechord{C, Dm, Em, F, G, Am, Bdim}となります。逆にC minorから音を選んでつくると、\writechord{Cm, Ddim, Eb, Fm, Gm, Ab, Bb}のコードを作ることができます。こうしてキーの中の音を使って作ったコードをダイアトニックコードと呼びます。ダイアトニックコードは、キーの中ではある特定の雰囲気・役割を持つという基本的な考え方（機能和声という考え方）があり、その理論のもとでは、コードの役割は大きく分けて三つに分類されます：
+\begin{itemize}
+    \item トニック：安定した響きを持つコードです。イメージでいうと、曲の終わりや、お辞儀の最後です。
+    \item ドミナント：不安定な響きを持ち、トニックが次に来ると快楽を覚えさせるコード。ドミナントからトニックコードに向かうことを「解決」と呼びます
+    \item サブドミナント（プレドミナント）：トニックに対する解決力は弱いが、ドミナントを持ってくるための下準備・勢い作りを
+することができる。癖が強いコードが多い。
+\end{itemize}
+どのダイアトニックコードがどのような役割を持つのかは付録の最後に説明しています。\par
+このコードの役割を理解すると、コード進行は一つの物語を作ることが想像できます。トニックから始まり、サブドミナントで勢いを作り、ドミナントで緊張を作ってトニックに解決するというサイクルは、「起承転結」の音楽版であると云えます。
+\subsubsection{ローマ数字表記}
+スケールにおける帽子付き数字（スケール度数）と同様に、コードをキーの中での役割によって記述する方法があります。それは、コードのルートのスケール度数を記述することです。これは、コードのキーの中での聞こえ方・役割が、ルートのスケール度数に大方依存するという経験則的大筋から由来します。逆に、同じコードでも、異なる文脈（キー）の中で演奏すれば、その意味や聞こえ方は変わってくるということです。例えば、キーC minorで演奏する\writechord{Gm}はドミナントコードですが、キーD minorで演奏する\writechord{Gm}はサブドミナントであり、全く雰囲気が違います。スケール度数と同様に、ローマ数字を用いることによって、キーを併記しないでコード進行を記述し、記述を一般化することができます。例えば、東方原曲での数多くの曲は「\writechord{bVI bVII i}」（例：キーC minorにおける\writechord{Ab} \wc{Bb} \wc{Cm}, キーD minorにおける \writechord{Bb} \writechord{C Dm}）というコード進行を使っているという事実があります。ローマ数字の振り方は付録の最後にて説明しています。
+\subsection{本稿における表記法と思想}
+音楽理論を扱う世のマテリアルでは表記（と流派）が異なることも多いので、本稿で使用する表記とコードの解釈について追記します。特に、東方は短調ベースで書かれることが多く、臨時記号も多用するので、それに適応した表記として、長調としての表記・分析より短調としての表記や分析を行うことが多いと思います。\par
+具体的に、コードのルートに対する度数とスケ
+ールに対する度数を区別するため、後者をアクセント
+付きの数字で表記していきます。（\autoref{fig:scales}）\par
+\begin{itemize}
+    \item  長音階に関しては \sd{1} \sd{2} \sd{3} \sd{4} \sd{5} \sd{6} \sd{7} と表記
+    \item 自然短音階は \sd{1} \sd{2} \fl \sd{3} \sd{4} \sd{5} \fl \sd{6} \fl \sd{7} と表記
+    \item その上で、臨時記号をその都度用いる（例: 和声短音階は \sd{1} \sd{2} \fl \sd{3} \sd{4} \sd{5} \fl \sd{6} \na \sd{7} ）
+\end{itemize}
+
+\begin{figure}
+    \centering
+    \begin{subfigure}{0.4\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{resources/major scale.png}
+        \includegraphics[width=\linewidth]{resources/minor scale.png}
+        \caption{長音階、短音階}
+        \label{fig:scales}
+    \end{subfigure}
+    \begin{subfigure}{0.4\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{resources/major scale chords.png}
+        \includegraphics[width=\linewidth]{resources/minor scale chords.png}
+        \caption{長音階、短音階のダイアトニックコード}
+        \label{fig:diatonicChords}  
+    \end{subfigure}
+    \caption{本稿での表記}
+    \label{fig:notation}
+\end{figure}
+
+また、コードのローマ数字表記に関して、メジャーコードとマイナーコードの表記法を区別します。（\autoref{fig:diatonicChords}）
+\begin{itemize}
+    \item メジャーコードは大文字
+    \item マイナーコードは小文字
+    \item コードエクステは重要であると判断した場合に表記
+\end{itemize}
+続いてダイアトニックコードの役割ですが、ダイアトニックコードの役割は教材・ソースによって割れることも多々あるので予めここで本稿においての考えを断っておきます。（\autoref{tab:diatonicFunctions}）
+\begin{itemize}
+    \item 長調
+    \begin{itemize}
+        \item \writechord{I}, \writechord{iii}, \writechord{vi}はトニック役  
+        \item \writechord{V}, \writechord{viio}はドミナント役
+        \item \writechord{ii}, \writechord{IV}はプレドミナント役   
+    \end{itemize}
+    \item 短調
+    \begin{itemize}
+        \item \writechord{i}, \writechord{bIII}, \writechord{vi}はトニック役  
+        \item \writechord{v}, \writechord{bVII}はドミナント役
+        \item \writechord{iio}, \writechord{iv}, \writechord{bVI}はプレドミナント役   
+    \end{itemize}
+\end{itemize}
+
+\begin{table}
+    \centering
+    \caption{コードの役割}
+    \begin{tabular}{|c|c|c|c|}\hline
+        調 & トニック & ドミナント & プレドミナント \\\hline
+        長調 & \makecell{\writechord{I} \\ \wc{iii} \\ \wc{vi}} & \makecell{\wc{V} \\ \writechord{viio}} & \makecell{\wc{IV} \\ \wc{ii}} \\
+        短調 & \makecell{\writechord{i} \\ \wc{bIII}} & \makecell{\wc{v} \\ \writechord{bVII}} & \makecell{\wc{iv} \\ \writechord{bVI} \\ \wc{iio}} \\ \hline
+    \end{tabular}
+    \label{tab:diatonicFunctions}
+\end{table}
+
+\bibliographystyle{plain}
+% \bibliographystyle{aipnum-cp}%
+\bibliography{references}
+
+\end{document}

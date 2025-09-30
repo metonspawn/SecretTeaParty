@@ -1,0 +1,7 @@
+etc/
+*.aux
+*.log
+*.ltjruby
+*.out
+*.gz
+*.toc
