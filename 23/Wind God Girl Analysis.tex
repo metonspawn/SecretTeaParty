@@ -132,8 +132,56 @@ E\na はこの部分でのキーであるF短音階に含まれず、代わり�
     \item ベースの動き方が、東方で頻出のパターンに沿っている
     \item \wc{Dm}と\wc{Fm}のコードの間に近親さがある
 \end{enumerate}
+まず、1.について。キーから逸脱しないとするならば、ベースが\sd{1} (今回ならF)を鳴らしたあと、\fl \sd{7} (E\fl )を経て\fl \sd{6} (D\fl )を踏むのが予想できます。しかし、今回は\sd{1} \fl \sd{ 7}を踏んだのち、\na \sd{6} (D\na )を踏んでいますね。実は\sd{1}, \fl \sd{7}から\na \sd{6}を踏むこと「自体」はZ氏の常套句で、風神録5面道中-少女が見た日本の原風景（公式音源0:32～0:36）、文の妖怪の山〜Mysterious Mountain（公式音源0:13～0:16）や、最近の曲ならば錦上京2面のセイクリッドフォレスト（音源0:22～0:30\cite{FWOST}）でみられます。\footnote{ただ、これらの例では、そのベースを用いて作るコードが今回と異なります。具体的にいうと、これらは風神少女でみられる\wc{vi}ではなく、\wc{IV}/\na \sd{6}を形成します（\autoref{fig:verseBass}）。これが生む大きな違いとして、\wc{IV}がキーのなかでサブドミナントとして機能するのに対し、\wc{vi}はトニックでもドミナントでもサブドミナントでもなんでもない、無機能的なコードであるという点です。}\par
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\linewidth]{resources/verse bass.png}
+    \caption{上：少女が見た日本の原風景のイメージ　下：風神少女のイメージ}
+    \label{fig:verseBass}
+\end{figure}
+次に、2.について。\wc{Dm}と\wc{Fm}は、共有する短音階を持たず、\wc{Dm}は絶対にキーの外へと出てしまうのに、いざ曲の中で聞いてみると、そこまで「逸脱した」「ハズした」ような匂いはしません。その根本原因となるのが、\wc{Dm}と\wc{Fm}のルートが三度離れであるということです。\par
+ルートが三度離れのコードはサウンドから役割まで、かなり似ると云われます。簡単な例だと、\wc{C}と\wc{Am}や\wc{C}と\wc{Em}は似ていると云えます。その原因はそれぞれCとE、EとGを共通の音として持っているからです。では、\wc{C}と\wc{E}のような、ルートが三度離れであっても、共通のキーがないようなコードはどうでしょうか。E音は共通していますが、片方がG\na を使うのに対し、もう片方はG\sh を必要とします。見かけ上は共通音が多いはずなのに、G\na かG\sh か、どっちのバージョンを使うべきか喧嘩しているかのようです。このような関係を\textbf{クロマチックメディアント}と呼びます。クロマチックメディアントはルートが三度離れであるためにどこか「似ている」という性質がありながらも、どこか決定的なところで相違点を持つ組み合わせで、今回の\wc{Dm}と\wc{Fm}のペアはこの関係性に当たります。つまり、この二つのコードが、キーを違えていても、どこかで「十分に似ている」おかげで、曲の中で浮かないで済むと云えます。
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\linewidth]{resources/mediants.png}
+    \caption{左：メディアント関係、右：クロマチックメディアント関係}
+    \label{fig:mediants}
+\end{figure}
+\begin{figure}[b]
+    \centering
+   % \vspace{-60pt}
+    \fcolorbox{black}{bgc}{
+        \begin{minipage}{\linewidth}
+        \textbf{クロマチックメディアント} \\ ルートが三度離れで、共通音を一つしか持たないコード。調性を前提としない理論体系で頻繁に見る。
+        \end{minipage}
+    }
+\end{figure}
+\par\vspace{15pt}
+さらに深堀すると、クロマチックメディアント等、スケールを前提としないコードの関係性をまとめた理論として、\textbf{ネオリーマン理論}が存在します。これ以上原稿本編の面積を独占してはいけないので、付録にて少し詳しく説明します。
+\par\vspace{15pt}
+さて、Aメロの最後は緊張感を高めるために\ruby[pre=1000,post=1000]{和声短音階}{ハーモニックマイナースケール}を用いて\wc{C} (\wc{V})和音を鳴らして、サビに渡ります。
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\linewidth]{resources/prechorus.png}
+    \caption{Aメロとサビの繋ぎ}
+    \label{fig:preChorus}
+\end{figure}
 \subsection{サビ}
-
+サビの構成は簡単な起承転結構造をとっており、基本的なパターンは\autoref{fig:chorus}のようになります。\wc{bVI} \wc{bVII} \wc{i}進行を基本構造としたうえで、反復によってメロディーを形成しています。サビを通してこのコード進行は基本的に変わらないのですが、三回し目のみ、変化球が入ります(\autoref{fig:chorusInterchange})。\wc{Db} \wc{Eb} \wc{Fm}と、\wc{Fm}に着地する代わりに、\wc{Bb/D}\na からの\wc{C7/E}\na を通り、（読みやすさのためにベースの動きを省略すると）\wc{bVI} \wc{bVII} \wc{IV} \wc{V7}という進行を踏みます。この段階で、臨時\na から見えるように、本来の音階から逸脱した音が続いて使用されます。しかし、いずれの場合も、已に存在するマイナーコードをメジャーコードに変換するための逸脱なので、そこまでおかしく聞こえません。\par
+\vspace{15pt}
+この\wc{Bb/D}\na と\wc{C7/E}\na の二つのコードが、曲の中で印象に残るかなり特異的な点であることは確かです。では、これらは理論的にはどういう裏付けができるのかを見ていきましょう。\par
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\linewidth]{resources/chorus.png}
+    \caption{サビの最初の四小節}
+    \label{fig:chorus}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\linewidth]{resources/chorus interchange.png}
+    \caption{サビの三周目}
+    \label{fig:chorusInterchange}
+\end{figure}
 \subsection{まとめ}
 \section{付録}
 \subsection{音楽理論基礎 (再掲)}
