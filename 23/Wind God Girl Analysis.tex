@@ -32,11 +32,12 @@
 \addtocounter{page}{1}
 \setcounter{tocdepth}{2}
 
-\title{コードオタクが語る東方楽曲分析 \\ \large{第二弾　緋想天 - 砕月からみるメロディーの作り方}}
+%\title{コードオタクが語る東方楽曲分析 \\ \large{第二弾　緋想天 - 砕月からみるメロディーの作り方}}
 \author{Metalloid.}
 \date{Aug 2025}
 
 \newcommand{\wc}{\writechord}
+%\newcommand{\sd}{\textbf}
 \NewDocumentCommand{\sd}{}{\musDegree}
 \definecolor{bgc}{RGB}{255, 245, 206}
 
@@ -48,7 +49,7 @@
 \vspace{3pt}
 \hrule
 \vspace{3pt}
-\rightline{\large{第三弾　風神少女のハーモニー}}
+\rightline{\large{第三弾　風神少女から垣間見る\ruby{調}{キー}からの逸脱}}
 \vspace{12pt} \rightline{Metalloid.} \rightline{8/2025}
 
 \tableofcontents
@@ -167,9 +168,10 @@ E\na はこの部分でのキーであるF短音階に含まれず、代わり�
     \label{fig:preChorus}
 \end{figure}
 \subsection{サビ}
-サビの構成は簡単な起承転結構造をとっており、基本的なパターンは\autoref{fig:chorus}のようになります。\wc{bVI} \wc{bVII} \wc{i}進行を基本構造としたうえで、反復によってメロディーを形成しています。サビを通してこのコード進行は基本的に変わらないのですが、三回し目のみ、変化球が入ります(\autoref{fig:chorusInterchange})。\wc{Db} \wc{Eb} \wc{Fm}と、\wc{Fm}に着地する代わりに、\wc{Bb/D}\na からの\wc{C7/E}\na を通り、（読みやすさのためにベースの動きを省略すると）\wc{bVI} \wc{bVII} \wc{IV} \wc{V7}という進行を踏みます。この段階で、臨時\na から見えるように、本来の音階から逸脱した音が続いて使用されます。しかし、いずれの場合も、已に存在するマイナーコードをメジャーコードに変換するための逸脱なので、そこまでおかしく聞こえません。\par
-\vspace{15pt}
-この\wc{Bb/D}\na と\wc{C7/E}\na の二つのコードが、曲の中で印象に残るかなり特異的な点であることは確かです。では、これらは理論的にはどういう裏付けができるのかを見ていきましょう。\par
+\subsubsection{セクションの流れ}
+サビの構成は簡単な起承転結構造をとっており、基本的なパターンは\autoref{fig:chorus}のようになります。\wc{bVI} \wc{bVII} \wc{i}進行を基本構造としたうえで、反復によってメロディーを形成しています。サビを通してこのコード進行は基本的に変わらないのですが、三回し目のみ、変化球が入ります(\autoref{fig:chorusInterchange})。\wc{Db} \wc{Eb} \wc{Fm}と、\wc{Fm}に着地する代わりに、\wc{Bb/D}\na からの\wc{C7/E}\na を通り、（読みやすさのためにベースの動きを省略すると）\wc{bVI} \wc{bVII} \wc{IV} \wc{V7}という進行を踏みます。この段階で、臨時\na から見えるように、本来の音階から逸脱した音が続いて使用されます。しかし、いずれの場合も、本来キーの中でマイナーコードとして存在するべきであったものをメジャーコードに変換するための逸脱なので、そこまでおかしく聞こえません。\par
+\subsubsection{\wc{IV} \wc{V}について}
+この\wc{Bb/D}\na と\wc{C7/E}\na の二つのコードが、曲の中で印象に残るかなり特異的な点であることは確かです。では、これらは理論的にはどういう裏付けができるのか、そしてどのような効果が生み出されているのかを見ていきましょう。実は、このコードたちが一体どこから誕生したのかについて、この段階でいくつかの仮説を建てることができます。\par
 \begin{figure}
     \centering
     \includegraphics[width=0.9\linewidth]{resources/chorus.png}
@@ -182,6 +184,15 @@ E\na はこの部分でのキーであるF短音階に含まれず、代わり�
     \caption{サビの三周目}
     \label{fig:chorusInterchange}
 \end{figure}
+\begin{enumerate}
+    \item 長音階説：FマイナーからFメジャーへと、短調から長調へ局所的に転調した。
+    \item ドリアン説：Fドリアンスケールから\wc{Bb/D}を借用し、次の小節でFハーモニックマイナーから\wc{C7/E}を連れてきた。
+    \item 旋律短音階説：F\ruby[pre=1000,post=1000]{旋律短音階}{メロディックマイナースケール}から\wc{Bb/D}も\wc{C7/E}も両方取ってきている。
+\end{enumerate}
+それぞれの仮説では\wc{Bb}および\wc{C7}がどのスケールから来ているのか、つまり、これらのコードによってどのような音階の風味が想起されるのかが違います。それぞれの仮説の意味すること、およびその信憑性を一つずつ見ていくことにより、この２つのコードがこの楽曲でどのような効果を生み出しているのかに迫ろうという試みです。\par
+\vspace{10pt}
+\textbf{長音階説}\\
+この箇所で曲が短調から長調へ転調したとするなら、そこから借用された\wc{Bb}と\wc{C7}は長調の明るさを
 \subsection{まとめ}
 \section{付録}
 \subsection{音楽理論基礎 (再掲)}
