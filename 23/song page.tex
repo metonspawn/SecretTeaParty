@@ -1,0 +1,71 @@
+\documentclass[11pt]{ltjarticle}
+\usepackage[b5paper,bmargin=100pt]{geometry}
+\usepackage{luatexja}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{musicography}
+\usepackage{leadsheets}
+\usepackage{luatexja-ruby} 
+\usepackage{wrapfig}
+\usepackage{caption}
+\usepackage{makecell}
+\usepackage{dashrule}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\graphicspath{ {./resources/} }
+\usepackage{hyperref}
+\usepackage{subcaption}
+\usepackage[document]{ragged2e}
+
+\setchords{
+    major-seven = \textsuperscript{M7},
+    major-nine = \textsuperscript{M9}
+}
+
+\renewcommand*\contentsname{目次}
+\renewcommand{\figureautorefname}{図}
+\renewcommand{\tableautorefname}{表}
+\setlength{\RaggedRightParindent}{\parindent}
+\setlength{\abovecaptionskip}{0pt plus 3pt minus 2pt}
+\RaggedRight
+%\pagenumbering{roman}
+\pagenumbering{gobble}
+\addtocounter{page}{1}
+\setcounter{tocdepth}{2}
+
+%\title{コードオタクが語る東方楽曲分析 \\ \large{第二弾　緋想天 - 砕月からみるメロディーの作り方}}
+\author{Metalloid.}
+\date{Oct 2025}
+
+\newcommand{\wc}{\writechord}
+%\newcommand{\sd}{\textbf}
+\NewDocumentCommand{\sd}{}{\musDegree}
+
+
+\begin{document}
+%\maketitle
+
+\Center{\huge{Lunar Dial}}
+\vspace{3pt}
+\hrule
+\vspace{3pt}
+\rightline{\large{原曲：月時計～ルナ・ダイアル }}
+\vspace{12pt} \rightline{作曲：上海アリス幻樂団} \rightline{編曲：Metalloid.}
+
+%\tableofcontents
+
+\vspace{10pt}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.4\linewidth]{qr song.png}
+\end{figure}
+
+\section*{アレンジャーコメント}
+\RaggedRight
+4?5?つつめに書いた東方アレンジとなります。作譜は去年の夏でもう終わっていたのですが、ギターを撮るのが面倒くさくて（そして指が思ったより動かなくて）ずっと放置していて、やっと実際に撮って音源として仕上げようという気に駆られました。\par
+アレンジのコンセプトとしては、原曲前半のコンセプトを「錯乱」、後半を「普通にかっこいい」と解釈し、それを自分流に再翻訳したみたいなものです。当時は普通のロックやシンフォニックメタルもどきを主に書いていたので、気分転換としてエクストリームさを増やしてゲロ楽器隊のようなアンサンブルを試したかったというモチベもあります。拍子が変わるまでは音程やパート割り振りの面でのキモさ、拍子が変わってからはリズム的なキモさを狙いました。後半からはFripS〇deみたいなギター\musSixteenth フレーズを書いてみたかっただけです。\par 
+曲が短い分、かなり刺激の濃度が高いアレンジであると思うので、寝る前にはご注意を。そして、今回はミックスの段階で性癖に負けてチャイナシンバルを二本用意しました、是非ご堪能ください。
+\end{document}
