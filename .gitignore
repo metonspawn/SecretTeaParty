@@ -2,6 +2,10 @@ etc/
 *.aux
 *.log
 *.ltjruby
+*.bcf
+*.xml
+*.tar
+*.mscz
 *.out
 *.gz
 *.toc
@@ -10,3 +14,4 @@ etc/
 23/resources.zip
 23/song page.pdf
 *.txt
+24/tempScore.pdf
